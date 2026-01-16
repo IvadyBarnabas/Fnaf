@@ -1,0 +1,120 @@
+/* ================== ROOT ================== */
+:root{
+  --bg:#050505;
+  --panel:#0d0d0d;
+  --red:#b30000;
+  --gold:#cfa23f;
+  --text:#e6e6e6;
+  --muted:#777;
+}
+
+/* ================== RESET ================== */
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:'Orbitron',sans-serif;
+  background:radial-gradient(circle at top,#111,#000);
+  color:var(--text);
+}
+
+/* ================== NAV ================== */
+nav{
+  position:sticky;top:0;z-index:999;
+  background:#000;
+  border-bottom:2px solid var(--red);
+}
+nav ul{
+  display:flex;justify-content:center;gap:30px;
+  list-style:none;padding:15px;
+}
+nav a{
+  color:var(--gold);text-decoration:none;
+  letter-spacing:2px;font-size:14px;
+}
+nav a:hover{color:#fff}
+
+/* ================== HERO ================== */
+.hero{
+  height:90vh;
+  background:
+    linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.9)),
+    url("https://i.imgur.com/z4d4kWk.jpg") center/cover;
+  display:flex;flex-direction:column;
+  justify-content:center;align-items:center;
+  text-align:center;
+}
+.hero h1{
+  font-size:4rem;
+  color:var(--red);
+  text-shadow:0 0 25px #000;
+}
+.hero p{
+  max-width:700px;
+  margin-top:20px;
+  color:#ccc;
+}
+
+/* ================== SECTIONS ================== */
+section{
+  padding:80px 8%;
+}
+.section-title{
+  text-align:center;
+  margin-bottom:50px;
+  font-size:2.3rem;
+  color:var(--gold);
+}
+
+/* ================== CARDS ================== */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+}
+.card{
+  background:var(--panel);
+  border:1px solid #222;
+  border-radius:10px;
+  overflow:hidden;
+  transition:.3s;
+}
+.card:hover{transform:translateY(-6px)}
+.card img{
+  width:100%;height:180px;
+  object-fit:cover;
+}
+.card .content{padding:20px}
+.card h3{color:var(--gold)}
+.card p{font-size:13px;color:#bbb}
+
+/* ================== SHOP ================== */
+.shop-item{
+  display:flex;flex-direction:column;
+}
+.price{
+  color:var(--red);
+  margin:10px 0;
+}
+.buy-btn{
+  margin-top:auto;
+  padding:10px;
+  background:var(--red);
+  color:#fff;
+  border:none;
+  cursor:pointer;
+}
+.buy-btn:hover{background:#ff0000}
+
+/* ================== FOOTER ================== */
+footer{
+  background:#000;
+  border-top:2px solid var(--red);
+  padding:40px;
+  text-align:center;
+  font-size:12px;
+  color:#666;
+}
+
+/* ================== MEDIA ================== */
+@media(max-width:600px){
+  .hero h1{font-size:2.5rem}
+}
