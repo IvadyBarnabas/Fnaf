@@ -114,7 +114,9 @@ section{
   background:#070707;
 }
 .game img{
-  width:100%;
+  width:300px;
+  height:100%;
+  object-fit:cover;
   border-radius:10px;
   border:2px solid #222;
 }
@@ -148,4 +150,104 @@ footer{
 /* ================== MEDIA ================== */
 @media(max-width:600px){
   .hero h1{font-size:2.5rem}
+}
+
+/* Alternative card layout for jatekok.htm */
+.alt-grid{
+  column-count:3;
+  column-gap:20px;
+}
+.card-alt{
+  display:inline-block;
+  width:100%;
+  margin:0 0 20px;
+  background-size:cover;
+  background-position:center;
+  height:220px;
+  color:#fff;
+  border-radius:8px;
+  position:relative;
+  overflow:hidden;
+  text-decoration:none;
+}
+.card-alt .meta{
+  position:absolute;left:0;right:0;bottom:0;padding:12px 14px;
+  background:linear-gradient(180deg,transparent,rgba(0,0,0,.75));
+}
+.card-alt h3{margin:0;color:var(--gold);font-size:1.1rem}
+.card-alt span{font-size:12px;color:var(--muted)}
+
+@media(max-width:900px){
+  .alt-grid{column-count:2}
+}
+@media(max-width:600px){
+  .alt-grid{column-count:1}
+}
+
+/* Vertical cards for jatekok.htm */
+.vertical-grid{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+  max-width:1000px;
+  margin:0 auto;
+}
+.vcard{
+  display:flex;
+  gap:18px;
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.06));
+  border:1px solid #222;
+  border-radius:10px;
+  overflow:hidden;
+  text-decoration:none;
+  color:var(--text);
+  align-items:center;
+  padding:14px;
+}
+.vcard img{
+  width:160px;
+  height:120px;
+  object-fit:cover;
+  border-radius:6px;
+  flex-shrink:0;
+}
+.vcontent{flex:1}
+.vcontent h3{margin-bottom:6px;color:var(--gold)}
+.vcontent p{color:#ccc;font-size:14px}
+.vmeta{margin-top:8px;color:var(--muted);font-size:13px}
+
+.download-btn{
+  margin-left:16px;padding:10px 14px;background:var(--red);color:#fff;border:none;border-radius:6px;text-decoration:none;
+}
+.download-btn:hover{background:#ff0000}
+
+@media(max-width:800px){
+  .vcard{flex-direction:row;align-items:flex-start}
+  .vcard img{width:120px;height:90px}
+}
+@media(max-width:520px){
+  .vcard{flex-direction:column}
+  .download-btn{margin-left:0;margin-top:10px}
+}
+
+/* Modal for game details */
+.modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.75);opacity:0;visibility:hidden;transition:opacity .2s ease,visibility .2s}
+.modal.open{opacity:1;visibility:visible}
+.modal-dialog{background:var(--panel);border-radius:10px;max-width:900px;width:95%;padding:18px;border:1px solid #222}
+.modal-close{position:absolute;right:18px;top:10px;background:transparent;border:none;color:#fff;font-size:28px;cursor:pointer}
+.modal-body{display:flex;gap:18px;align-items:flex-start}
+.modal-img{width:320px;height:220px;object-fit:cover;border-radius:8px}
+.modal-info{flex:1}
+.modal-info{display:flex;flex-direction:column;gap:12px}
+.modal-title{color:var(--gold);margin-bottom:8px}
+.modal-desc{color:#ccc}
+.modal-meta{margin-top:8px;color:var(--muted);font-size:13px}
+.modal-info .download-btn{margin-left:0;margin-top:12px;align-self:flex-start}
+
+@media(max-width:800px){
+  .modal-body{flex-direction:column}
+  .modal-img{width:100%;height:180px}
+}
+@media(max-width:520px){
+  .modal-info .download-btn{margin-top:10px}
 }

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Játékok — FNAF Universe</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">FŐOLDAL</a></li>
+      <li><a href="jatekok.htm">JÁTÉKOK</a></li>
+      <li><a href="index.html#movies">FILMEK</a></li>
+      <li><a href="webshop.html">WEBSHOP</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero" style="background-position:center top; height:50vh;">
+    <h1>JÁTÉKOK</h1>
+    <p>Részletes bemutató és galéria a FNAF játékokról.</p>
+  </header>
+
+  <!-- Vertikális kártyák: kattintva felugró ablak jelenik meg -->
+  <section style="padding:40px 6%;">
+    <h2 class="section-title">Játékok</h2>
+    <div class="vertical-grid">
+
+      <div class="vcard" role="button" tabindex="0"
+           data-title="Five Nights at Freddy's"
+           data-desc="Az eredeti túlélő horror: figyeld a kamerákat, kezeld az energiát, és próbálj túlélni." 
+           data-platforms="PC, mobil"
+           data-year="2004"
+           data-img="fnaf1.png"
+           data-download="#">
+        <img src="fnaf1.png" alt="FNAF 1">
+        <div class="vcontent">
+          <h3>Five Nights at Freddy's</h3>
+          <p>Az eredeti túlélő horror, kamerakezelés és éjszakai fenyegetés. Kattints a részletekért.</p>
+          <div class="vmeta">Platformok: PC, mobil • Megjelenés: 2004</div>
+        </div>
+      </div>
+
+      <div class="vcard" role="button" tabindex="0"
+           data-title="FNAF: Security Breach"
+           data-desc="Óriási komplexum, nyíltabb játékmenet és új animatronikai fenyegetések." 
+           data-platforms="PC, konzol"
+           data-year="2021"
+           data-img="sec.png"
+           data-download="#">
+        <img src="sec.png" alt="Security Breach">
+        <div class="vcontent">
+          <h3>FNAF: Security Breach</h3>
+          <p>Nagy, szabadon bejárható komplexum és új animatronikák — modern élmény.</p>
+          <div class="vmeta">Platformok: PC, konzol • Megjelenés: 2021</div>
+        </div>
+      </div>
+
+      <div class="vcard" role="button" tabindex="0"
+           data-title="Help Wanted"
+           data-desc="VR élmény, ahol a régi helyzetek új köntösben jönnek vissza." 
+           data-platforms="VR, konzol"
+           data-year="2019"
+           data-img="fnafhw.png"
+           data-download="#">
+        <img src="fnafhw.png" alt="Help Wanted">
+        <div class="vcontent">
+          <h3>Help Wanted</h3>
+          <p>VR-szerű élmény portokkal — régi helyzetek új köntösben.</p>
+          <div class="vmeta">Platformok: VR, konzol • Megjelenés: 2019</div>
+        </div>
+      </div>
+
+      <div class="vcard" role="button" tabindex="0"
+           data-title="Ultimate Custom Night"
+           data-desc="Saját éjszakád testreszabása, végtelen kihívás és beállítások." 
+           data-platforms="PC"
+           data-year="2018"
+           data-img="fnafucn.png"
+           data-download="#">
+        <img src="fnafucn.png" alt="Ultimate Custom Night">
+        <div class="vcontent">
+          <h3>Ultimate Custom Night</h3>
+          <p>Teljesen testre szabható éjszakák, végtelen kihívások.</p>
+          <div class="vmeta">Platformok: PC • Megjelenés: 2018</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Galéria alul: kis képek, kattintva nagyítódnak (lightbox nélkül) -->
+  <section style="padding:30px 6%;">
+    <h2 class="section-title">Galéria</h2>
+    <div class="alt-grid">
+      <a class="card-alt" href="fnaf1.png" style="background-image:url('fnaf1.png');">
+        <div class="meta"><h3>FNAF 1</h3></div>
+      </a>
+      <a class="card-alt" href="sec.png" style="background-image:url('sec.png');">
+        <div class="meta"><h3>Security Breach</h3></div>
+      </a>
+      <a class="card-alt" href="helpwanted.png" style="background-image:url('helpwanted.png');">
+        <div class="meta"><h3>Help Wanted</h3></div>
+      </a>
+      <a class="card-alt" href="fnafucn.png" style="background-image:url('fnafucn.png');">
+        <div class="meta"><h3>UCN</h3></div>
+      </a>
+      <a class="card-alt" href="fnafpizza.png" style="background-image:url('fnafpizza.png');">
+        <div class="meta"><h3>Pizzaparádé</h3></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Modal markup -->
+  <div id="game-modal" class="modal" aria-hidden="true">
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close" aria-label="Bezárás">×</button>
+      <div class="modal-body">
+        <img class="modal-img" src="" alt="">
+        <div class="modal-info">
+          <h3 id="modal-title" class="modal-title"></h3>
+          <p class="modal-desc"></p>
+          <div class="modal-meta"></div>
+          <a class="download-btn" href="#" target="_blank">Letöltés / Megtekintés</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>Ez az oldal rajongói projekt. A Five Nights at Freddy’s minden joga az alkotókat illeti.</p>
+  </footer>
+
+  <script>
+  (function(){
+    const modal = document.getElementById('game-modal');
+    const img = modal.querySelector('.modal-img');
+    const title = modal.querySelector('.modal-title');
+    const desc = modal.querySelector('.modal-desc');
+    const meta = modal.querySelector('.modal-meta');
+    const dl = modal.querySelector('.download-btn');
+    const closeBtn = modal.querySelector('.modal-close');
+
+    function openCard(el){
+      img.src = el.dataset.img || '';
+      img.alt = el.dataset.title || '';
+      title.textContent = el.dataset.title || '';
+      desc.textContent = el.dataset.desc || '';
+      meta.textContent = (el.dataset.platforms? 'Platformok: '+el.dataset.platforms+' • ':'') + (el.dataset.year? 'Megjelenés: '+el.dataset.year : '');
+      dl.href = el.dataset.download || '#';
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden','false');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal(){
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden','true');
+      document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('.vcard').forEach(el=>{
+      el.addEventListener('click', ()=> openCard(el));
+      el.addEventListener('keypress', (e)=>{ if(e.key==='Enter' || e.key===' ') openCard(el); });
+    });
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e)=>{ if(e.target===modal) closeModal(); });
+    document.addEventListener('keydown', (e)=>{ if(e.key==='Escape' && modal.classList.contains('open')) closeModal(); });
+  })();
+  </script>
+</body>
+</html>
