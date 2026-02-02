@@ -115,14 +115,9 @@ section{
   background:#070707;
 }
 .game img{
-<<<<<<< HEAD
-  width:300px;
+  width:300px; 
   height:100%;
   object-fit:cover;
-=======
-  height: 450px;
-  width:auto;
->>>>>>> 3ccc35e0915d5848fd4cbaeda5fb776f412b8575
   border-radius:10px;
   box-shadow:0 0 15px #000;
 }
